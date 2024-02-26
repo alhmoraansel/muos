@@ -1,5 +1,6 @@
 #! /bin/bash
 
+i686-elf-as source/boot.s -o binaries/boot.o
 
 i686-elf-gcc -c source/kernel.c -o binaries/kernel.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
@@ -9,4 +10,4 @@ cp bin/muos.bin $HOME/Desktop/isodir/boot
 cd $HOME/Desktop
 
 grub-mkrescue -o muos.iso isodir
- qemu-system-i386 -cdrom muos.iso
+qemu-system-i386 -cdrom muos.iso

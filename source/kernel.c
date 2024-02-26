@@ -51,8 +51,8 @@ size_t strlen(const char* str)
 	return len;
 }
 
-static const size_t VGA_WIDTH = 800;
-static const size_t VGA_HEIGHT = 250;
+static const size_t VGA_WIDTH = 80;
+static const size_t VGA_HEIGHT = 20;
 
 size_t terminal_row;
 size_t terminal_column;
@@ -109,7 +109,6 @@ void kernel_main(void)
 {
 	/* Initialize terminal interface */
 	terminal_initialize();
-
 	/* Newline support is left as an exercise. */
-	terminal_writestring("TEST");
+	terminal_writestring("TEST 123 enter a");
 }
